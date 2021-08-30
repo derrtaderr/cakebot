@@ -16,4 +16,4 @@ class User(SqlAlchemyBase):
     phone: str = sa.Column(sa.String, index=True)
     email: str = sa.Column(sa.String, index=True)
 
-    # orders: List[Order]
+     orders: List[Order]

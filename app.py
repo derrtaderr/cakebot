@@ -7,13 +7,16 @@ from pathlib import Path
 
 app = flask.Flask(__name__)
 
+
 def configure():
     configure_routes()
     configure_db()
 
+
 def configure_routes():
     app.register_blueprint(home.blueprint)
     app.register_blueprint(order_api.blueprint)
+
 
 def configure_db():
     db_file = Path(__file__).parent / 'sql' / 'cloud_city.sqlite'
@@ -21,7 +24,7 @@ def configure_db():
 
 
 if __name__ == '__main__':
-    app.debug = True
+    configure()
     app.run()
 else:
     configure()
