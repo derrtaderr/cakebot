@@ -20,6 +20,7 @@ def all_cake_order() -> List[Order]:
 def find_order_by_id(order_id: int) -> Optional[Order]:
     with SessionContext() as ctx:
         order = ctx.session.query(Order)\
+            .options(subqueryload(Order.user))\
             .filter(Order.id == order_id)\
             .first()
         return order
