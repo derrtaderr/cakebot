@@ -4,3 +4,4 @@ SQLAlchemy~=1.4.23
 sendgrid
 html2text
 pdfkit
+twilio
